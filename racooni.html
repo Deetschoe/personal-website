@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Racooni?</title>
+    <meta name="Racooni" content="One day racooni will launch"/>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Helvetica', 'Roboto', sans-serif;
+        }
+        
+        .container h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="comingSoonText">Coming Soon</h1>
+    </div>
+    <div class="background-image"></div>
+
+    <a class="back-button" href="index.html">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+    
+    <script>
+        var images = [
+            "https://i.postimg.cc/6qthK0Zz/Poster4.png",
+            "https://i.postimg.cc/nVGkky8W/Poster3.png",
+            "https://i.postimg.cc/nr2GhDYx/Poster2.png",
+            "https://i.postimg.cc/y8bnR0qY/Poster1.png",
+        ];
+        var backgroundImage = document.querySelector(".background-image");
+        var textElement = document.getElementById("comingSoonText");
+        
+        function changeBackgroundImage() {
+            var imageIndex = Math.floor(Math.random() * images.length);
+            backgroundImage.style.backgroundImage = "url('" + images[imageIndex] + "')";
+        }
+        
+        textElement.addEventListener("mousedown", changeBackgroundImage);
+        
+        changeBackgroundImage();
+    </script>
+</body>
+</html>
