@@ -256,3 +256,20 @@ h3 {
   border-radius: 40px;
   background: #201b2c; 
 }
+
+
+.resource-block {
+  border-radius: 15px;
+}
+
+#resource-img {
+  width: 400px; 
+  float: right; 
+  margin-right: 200px;
+}
+
+
+
+.youtubers {
+  border-radius: 15px;
+}
